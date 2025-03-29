@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVI - Introducción a la Ing. Sistemas</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <div class="container">
+    <div class="Banner">
+        <img src="../media/Logo.png" alt="Logo OVI" class="logo">
+        <div class="Banner-texto">
+            <h1>Introducción a la Ingeniería de Sistemas</h1>
+            <p class="eslogan">Un recorrido por los fundamentos de la ingeniería de sistemas.</p>
+        </div>
+    </div>
+    
+    <div class="Menu">
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">Inicio</a></li>
+                <li class="submenu">
+                    <a href="../html/lecturas.html">Lecturas ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="../html/lecturas1.html">Historia</a></li>
+                        <li><a href="../html/lecturas2.html">Principios básicos</a></li>
+                        <li><a href="../html/lecturas3.html">Áreas de aplicación</a></li>
+                        <li><a href="../html/lecturas4.html">Extras 1</a></li>
+                        <li><a href="../html/lecturas5.html">Extras 2</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="../html/multimedia.html">Multimedia ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="../html/multimedia.html#Video 1">Video 1</a></li>
+                        <li><a href="../html/multimedia.html#Video 2">Video 2</a></li>
+                        <li><a href="../html/multimedia.html#Video 3">Video 3</a></li>
+                        <li><a href="../html/multimedia.html#Video 4">Video 4</a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="../html/actvidades.html">Actividades ▾</a>
+                    <ul class="dropdown">
+                        <li><a href="../html/actividad1.html">Actividad 1</a></li>
+                        <li><a href="../html/actividad2.html">Actividad 2</a></li>
+                        <li><a href="../html/actividad3.html">Actividad 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="../html/autores.html">Autores</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <div class="contenido">
+        <h2>Cuestionario de Opción Múltiple</h2>
+        <p>Responde cada pregunta seleccionando la opción correcta y presiona "Verificar respuestas" para conocer tu puntuación.</p>
+    
+        <form id="quizForm">
+            <div class="question">
+                <p>1️⃣ ¿Cuál es el principal objetivo de la Ingeniería de Sistemas?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> a) Desarrollar software exclusivamente</label>
+                    <label><input type="radio" name="q1" value="b"> b) Integrar y optimizar sistemas complejos</label>
+                    <label><input type="radio" name="q1" value="c"> c) Crear dispositivos electrónicos</label>
+                    <label><input type="radio" name="q1" value="d"> d) Diseñar redes sociales</label>
+                </div>
+            </div>
+    
+            <div class="question">
+                <p>2️⃣ ¿Cuál de las siguientes metodologías se usa en la Ingeniería de Sistemas para gestionar proyectos?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> a) Scrum</label>
+                    <label><input type="radio" name="q2" value="b"> b) SDLC (Ciclo de Vida del Desarrollo de Sistemas)</label>
+                    <label><input type="radio" name="q2" value="c"> c) Kanban</label>
+                    <label><input type="radio" name="q2" value="d"> d) Waterfall</label>
+                </div>
+            </div>
+    
+            <div class="question">
+                <p>3️⃣ ¿Qué ciencia es fundamental en la Ingeniería de Sistemas?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> a) Biología</label>
+                    <label><input type="radio" name="q3" value="b"> b) Matemáticas</label>
+                    <label><input type="radio" name="q3" value="c"> c) Astronomía</label>
+                    <label><input type="radio" name="q3" value="d"> d) Medicina</label>
+                </div>
+            </div>
+    
+            <div class="question">
+                <p>4️⃣ ¿Qué área de aplicación NO es común en la Ingeniería de Sistemas?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> a) Desarrollo de software</label>
+                    <label><input type="radio" name="q4" value="b"> b) Producción musical</label>
+                    <label><input type="radio" name="q4" value="c"> c) Inteligencia artificial</label>
+                    <label><input type="radio" name="q4" value="d"> d) Redes de comunicación</label>
+                </div>
+            </div>
+    
+            <div class="question">
+                <p>5️⃣ ¿Qué concepto describe la capacidad de un sistema para seguir funcionando a pesar de fallos en algunos de sus componentes?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> a) Escalabilidad</label>
+                    <label><input type="radio" name="q5" value="b"> b) Fiabilidad</label>
+                    <label><input type="radio" name="q5" value="c"> c) Seguridad</label>
+                    <label><input type="radio" name="q5" value="d"> d) Usabilidad</label>
+                </div>
+            </div>
+    
+            <button type="button" class="btn" onclick="verificarRespuestas()">Verificar respuestas</button>
+        </form>
+    
+        <p id="result"></p>
+        <script src="../JS/logica.js"></script>
+    </div>
+    
+    
+    
+
+    <div class="Barra">
+        <h3>Recursos Adicionales</h3>
+        <ul>
+            <li><a href="https://repositorio.unicordoba.edu.co/entities/publication/df0519e5-9db3-472c-9706-767260c27165" target="_blank">Libro recomendado</a></li>
+            <li><a href="https://es.linkedin.com/pulse/una-breve-introducci%C3%B3n-la-ingenier%C3%ADa-de-sistemas-vick-dini" target="_blank">Enlace a artículo</a></li>
+        </ul>
+    
+        <h3>Conceptos Clave</h3>
+        <ul>
+            <li><strong>Sistema:</strong> Conjunto de elementos que trabajan juntos para un propósito común.</li>
+            <li><strong>Algoritmo:</strong> Secuencia de pasos lógicos para resolver un problema.</li>
+            <li><strong>Software:</strong> Conjunto de instrucciones que una computadora puede ejecutar.</li>
+            <li><strong>Hardware:</strong> Componentes físicos de un sistema informático.</li>
+        </ul>
+    
+        <h3>Últimas Noticias</h3>
+        <ul>
+            <li>📢 <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.javerianacali.edu.co/noticias/ingenieria-de-sistemas-y-computacion-una-apuesta-innovadora-por-la-formacion-integral-y-el" target="_blank">Nuevas Noticias</a></li>
+        </ul>
+    </div>
+
+    <div class="Footer">
+
+        <p>&copy; 2025 - OVI de Ingeniería de Sistemas</p>
+
+        <p>Contacto: <a href="mailto:jmontesperez15@correo.unicordoba.edu.co" target="_blank">jmontesperez15@correo.unicordoba.edu.co</a></p>
+    </div>
+
+</div>
+</body>
+</html>
