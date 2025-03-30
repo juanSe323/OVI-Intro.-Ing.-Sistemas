@@ -192,8 +192,25 @@ body {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para darle un efecto visual */
 }
 
+.imagendesafio {
+    display: block; /* Asegura que la imagen esté en su propia línea */
+    margin: 0 auto 20px auto; /* Centra la imagen y deja espacio debajo */
+    text-align: center;
+    width: 60%; /* Ajusta el tamaño de la imagen */
+}
+
+.imagendesafio img {
+    width: 50%; /* Hace que la imagen sea responsiva */
+    border-radius: 8px;
+}
+
+.clear {
+    clear: both; /* Asegura que nada flote al lado del hr */
+    margin-top: 20px;
+}
+
 .img-seccion {
-    width: 150px; /* Tamaño ajustable según necesidad */
+    width: 100px; /* Tamaño ajustable según necesidad */
     height: auto;
     display: block;
     margin-bottom: 10px;
@@ -204,9 +221,26 @@ body {
     align-items: center;
 }
 
+.imagenfuturo {
+    float: left; /* Posiciona la imagen a la izquierda */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    width: 20%; /* Ajusta el tamaño de la imagen */
+}
+
+.imagenfuturo img {
+    width: 100%; 
+    border-radius: 8px; 
+}
 .img-intro {
-    width: 250px; /* Ajusta el tamaño según sea necesario */
-    margin-left: 20px; /* Espacio entre la imagen y el texto */
+    width: 250px; 
+    margin-left: 30px; 
+    margin-bottom: 10px;
+    border-radius: 1rem;
+}
+
+.img-intro img{
+    width: 100%; 
+    border-radius: 8px; 
 }
 
 h1 {
