@@ -3,6 +3,12 @@
     src: url('../fonts/Newsreader-Italic-VariableFont_opsz,wght.ttf');
 }
 
+/* Hacer todas las imágenes responsivas por defecto */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: "MiFuente";
     background-color: #F8F8F8;
@@ -20,6 +26,33 @@ body {
         "Footer Footer";
     gap: 5px; /* Espacio entre columnas */
 }
+    
+    /* Ajustes para el banner */
+    .Banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .Banner-texto {
+        text-align: center;
+    }
+    
+    /* Ajustes para el contenido */
+    .Contenido {
+        padding: 15px;
+    }
+    
+    /* Ajustes para la barra lateral */
+    .Barra {
+        padding: 15px;
+    }
+
 
   .Banner {
     color:  #F8F8F8;
@@ -39,7 +72,7 @@ body {
     justify-content: left;
     padding: 1px;
     border-radius: 1rem;
-    margin-right: 15px;
+    margin-right: 0;
  }
   
  .Banner-texto {
@@ -54,7 +87,11 @@ body {
     margin-top: 5px; /* Espacio entre el título y el eslogan */
 }
 
-/* Mantiene los estilos anteriores pero con la corrección del submenú */
+.menu-icon {
+    display: none;
+}
+
+/* Contenedor principal del menú */
 .Menu {
     grid-area: Menu;
     background-color: #7CB490;
@@ -64,10 +101,16 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 1rem;
+    position: relative;
 }
 
-/* Estilos del menú principal */
-.Menu nav ul {
+/* Navegación */
+.menu-nav {
+    width: 100%;
+}
+
+/* Menú principal */
+.menu-principal {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -75,31 +118,32 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
+}
+
+/* Elementos del menú principal */
+.menu-principal > li {
     position: relative;
 }
 
-/* Estilos de los enlaces */
-.Menu nav ul li {
-    position: relative; /* Necesario para que los submenús se ubiquen correctamente */
-}
-
-.Menu nav ul li a {
+/* Enlaces del menú principal */
+.menu-principal > li > a {
     text-decoration: none;
     color: #FFFFFF;
     font-weight: bold;
     padding: 10px 20px;
     border-radius: 5px;
     transition: background 0.3s;
+    display: block;
 }
 
-/* Efecto al pasar el mouse */
-.Menu nav ul li a:hover {
+/* Efecto hover en enlaces principales */
+.menu-principal > li > a:hover {
     background-color: #5A9E78;
 }
 
-/* SUBMENÚ (Opciones desplegables) */
-.Menu nav ul li ul {
-    display: none; /* Ocultos por defecto */
+/* Submenús (dropdowns) */
+.dropdown {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -107,32 +151,243 @@ body {
     padding: 0;
     border-radius: 5px;
     width: max-content;
-    min-width: 150px; /* Para que no se vea demasiado angosto */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Pequeña sombra para destacar */
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    z-index: 100;
 }
 
-/* Asegura que las opciones dentro del submenú no se superpongan */
-.Menu nav ul li ul li {
+/* Elementos de los submenús */
+.dropdown > li {
     width: 100%;
 }
 
-/* Estilos para los enlaces del submenú */
-.Menu nav ul li ul li a {
+/* Enlaces de los submenús */
+.dropdown > li > a {
     display: block;
     color: #2E604A;
     padding: 10px;
     transition: background 0.3s;
+    text-decoration: none;
 }
 
-/* Efecto al pasar el mouse en submenús */
-.Menu nav ul li ul li a:hover {
+/* Efecto hover en enlaces de submenús */
+.dropdown > li > a:hover {
     background-color: #7CB490;
     color: white;
 }
 
-/* Muestra el submenú cuando el usuario pasa el mouse sobre el elemento principal */
-.Menu nav ul li:hover > ul {
-    display: block;
+/* Mostrar submenús al hacer hover (solo en escritorio) */
+@media (min-width: 769px) {
+    .menu-principal > li:hover > .dropdown {
+        display: block;
+    }
+}
+
+/* ESTILOS PARA MÓVIL */
+@media (max-width: 768px) {
+
+    /* Mostrar icono de hamburguesa */
+    .menu-icon {
+        display: block;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        z-index: 1000;
+    }
+    
+    .Menu {
+        justify-content: flex-start;
+        padding-left: 60px;
+        width: 100vw; /* Se asegura que el menú no se salga del viewport */
+        max-width: 100%; /* Evita que sea más grande que la pantalla */
+        box-sizing: border-box; /* Evita que los paddings afecten el ancho total */
+    }
+    
+    /* Ocultar menú principal por defecto */
+    .menu-principal {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100vw;
+        max-width: 100%;
+        background-color: #7CB490;
+        padding: 10px 0;
+        gap: 0;
+        z-index: 999;
+    }
+    
+    /* Mostrar menú cuando está activo */
+    .menu-principal.show {
+        display: flex;
+    }
+    
+    /* Ajustar elementos del menú */
+    .menu-principal > li {
+        width: 100%;
+    }
+    
+    /* Ajustar enlaces principales */
+    .menu-principal > li > a {
+        text-align: left;
+        padding: 15px 20px;
+        border-radius: 0;
+    }
+    
+    /* Submenús en móvil */
+    .dropdown {
+        position: static;
+        display: none;
+        width: 100%;
+        background-color: #8fc1a0;
+        box-shadow: none;
+        padding-left: 20px;
+    }
+    
+    /* Mostrar submenús cuando están activos */
+    .dropdown.show {
+        display: block;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;  /* Una sola columna en móvil */
+        grid-template-areas:
+            "Banner"
+            "Menu"
+            "Contenido"
+            "Barra"
+            "Footer";
+        gap: 5px;
+    }
+    
+    /* Ajustes de tamaño de fuente */
+    body {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    h3 {
+        font-size: 18px;
+    }
+    
+    .Banner {
+        flex-direction: row; /* Mantener disposición horizontal */
+        padding: 15px;
+    }
+    
+    .logo {
+        width: 80px; /* Reducir un poco el tamaño en móvil */
+        margin-right: 10px; /* Mantener margen a la derecha */
+    }
+    
+    .Banner-texto {
+        text-align: left; /* Mantener texto alineado a la izquierda */
+    }
+    
+    .Banner h1 {
+        font-size: 18px; /* Reducir tamaño del título para móviles */
+    }
+    
+    .eslogan {
+        font-size: 0.9rem; /* Reducir tamaño del eslogan */
+    }
+    
+    /* Ajustes para el contenido */
+    .Contenido {
+        padding: 15px;
+    }
+    
+    /* Ajustes para la barra lateral */
+    .Barra {
+        padding: 15px;
+    }
+    
+    /* Ajustes para imágenes en móviles (Paso 5) */
+    .imagen, 
+    .imagen-lectura, 
+    .imagen-evo, 
+    .imglect3, 
+    .imagendesafio, 
+    .imagenfuturo {
+        float: none;
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
+    
+    .imagen img,
+    .imagen-lectura img,
+    .imagen-evo img,
+    .imagendesafio img,
+    .imagenfuturo img {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .img-intro {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+    
+    /* Ajustes para tarjetas y elementos especiales (Paso 6) */
+    .tarjeta-autor {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .tarjeta-autor img {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .game-container {
+        flex-direction: column;
+    }
+    
+    /* Ajustes para listas */
+    .lista-estilizada li {
+        padding-left: 25px;
+        font-size: 16px;
+    }
+    
+    /* Ajustes para botones */
+    .botones-actividades {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn {
+        text-align: center;
+    }
+    
+    /* Ajustes de espaciado y márgenes (Paso 7) */
+    .Contenido h2, 
+    .Contenido h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    
+    blockquote {
+        margin: 15px 0;
+        padding: 10px;
+    }
+    
+    .Footer {
+        padding: 10px;
+    }
 }
   
 .Contenido {

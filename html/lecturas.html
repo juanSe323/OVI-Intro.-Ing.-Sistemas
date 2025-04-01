@@ -17,11 +17,14 @@
     </div>
 
     <div class="Menu">
-        <nav>
-            <ul>
+        <div class="menu-icon" onclick="toggleMenu()">
+            ☰
+        </div>
+        <nav class="menu-nav">
+            <ul class="menu-principal">
                 <li><a href="../html/index.html">Inicio</a></li>
                 <li class="submenu">
-                    <a href="../html/lecturas.html">Lecturas ▾</a>
+                    <a href="../html/lecturas.html" class="submenu-trigger">Lecturas ▾</a>
                     <ul class="dropdown">
                         <li><a href="../html/lecturas1.html">Historia</a></li>
                         <li><a href="../html/lecturas2.html">Principios básicos</a></li>
@@ -31,7 +34,7 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="../html/multimedia.html">Multimedia ▾</a>
+                    <a href="../html/multimedia.html" class="submenu-trigger">Multimedia ▾</a>
                     <ul class="dropdown">
                         <li><a href="../html/multimedia.html#Video 1">Video 1</a></li>
                         <li><a href="../html/multimedia.html#Video 2">Video 2</a></li>
@@ -40,7 +43,7 @@
                     </ul>
                 </li>
                 <li class="submenu">
-                    <a href="../html/actvidades.html">Actividades ▾</a>
+                    <a href="../html/actvidades.html" class="submenu-trigger">Actividades ▾</a>
                     <ul class="dropdown">
                         <li><a href="../html/actividad1.html">Actividad 1</a></li>
                         <li><a href="../html/actividad2.html">Actividad 2</a></li>
@@ -51,7 +54,7 @@
             </ul>
         </nav>
     </div>
-    
+    <script src="../JS/logica.js"></script>
     <div class="Contenido">
  <h2>📖 Introducción a las Lecturas</h2>
     <p>

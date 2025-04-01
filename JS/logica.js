@@ -38,4 +38,48 @@ function verificarRespuestas() {
     resultadoElemento.style.textAlign = "center";
     resultadoElemento.style.marginTop = "15px";
 }
+// Función para mostrar/ocultar el menú principal
+function toggleMenu() {
+    var menu = document.querySelector(".menu-principal");
+    menu.classList.toggle("show");
+}
 
+document.addEventListener('DOMContentLoaded', function() {
+    var submenuTriggers = document.querySelectorAll('.submenu-trigger');
+    var touchStartTime = 0;
+    var lastTouchedElement = null;
+    
+    submenuTriggers.forEach(function(trigger) {
+        trigger.addEventListener('click', function(e) {
+            // Solo en móvil
+            if (window.innerWidth <= 768) {
+                var dropdown = this.nextElementSibling;
+                
+                // Si el submenú ya está visible o es un segundo toque en el mismo elemento,
+                // permitir la navegación normal
+                if (dropdown.classList.contains('show') || 
+                    (this === lastTouchedElement && Date.now() - touchStartTime < 500)) {
+                    // Permitir la navegación normal
+                    return true;
+                } else {
+                    // Primer toque: mostrar el submenú
+                    e.preventDefault();
+                    
+                    // Ocultar todos los submenús abiertos
+                    document.querySelectorAll('.dropdown.show').forEach(function(menu) {
+                        if (menu !== dropdown) {
+                            menu.classList.remove('show');
+                        }
+                    });
+                    
+                    // Mostrar este submenú
+                    dropdown.classList.add('show');
+                    
+                    // Registrar el tiempo y elemento para detectar doble toque
+                    touchStartTime = Date.now();
+                    lastTouchedElement = this;
+                }
+            }
+        });
+    });
+});
